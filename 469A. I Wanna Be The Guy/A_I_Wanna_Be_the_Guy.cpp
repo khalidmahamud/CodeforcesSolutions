@@ -2,44 +2,46 @@
 #include <algorithm>
 using namespace std;
 
-int maxElement (int arr[], int size) {
-    int* max = max_element(arr, arr + size);
-    return *max;
+void sortedArray (int arr[], int size) {
+    sort(arr, arr + size);
 }
 
 int main() {
-    int n, p, max1, max2;
+    int n, p;
     
     while (cin >> n) {
         cin >> p;
         int x[p];
-        int size = sizeof(x) / sizeof(x[0]);
+        int size1 = sizeof(x) / sizeof(x[0]);
 
         for (int i = 0; i < p; i++)
         {
             cin >> x[i];
         }
 
-        max1 = maxElement(x, size);
+        sortedArray(x, size1);
 
         cin >> p;
         int y[p];
-        size = sizeof(y) / sizeof(y[0]);
+        int size2 = sizeof(y) / sizeof(y[0]);
 
         for (int i = 0; i < p; i++)
         {
             cin >> y[i];
         }
 
-        max2 = maxElement(y, size);
+        sortedArray(y, size2);
 
-        if (max1 >= n || max2 >= n) {
+        int merged[size1 + size2];
+
+        int* it = set_union(x, x + size1, y, y + size2, merged);
+        int mergedSize = it - merged;
+
+        if (mergedSize == n) {
             cout << "I become the guy.";
         }
         else {
             cout << "Oh, my keyboard!";
         }
-
-        return 0;
     }
 }
