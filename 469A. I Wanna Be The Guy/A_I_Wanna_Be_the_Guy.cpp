@@ -33,7 +33,7 @@ int main() {
 
         max2 = maxElement(y, size);
 
-        if (max1 > n || max2 >= n) {
+        if (max1 >= n || max2 >= n) {
             cout << "I become the guy.";
         }
         else {
