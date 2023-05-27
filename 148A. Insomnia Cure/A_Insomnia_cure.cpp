@@ -7,14 +7,8 @@ int main() {
     while (cin >> k >> l >> m >> n >> d) {
         for (int i = 1; i <= d; i++)
         {
-            if (i % k != 0) {
-                if (i % l != 0) {
-                    if (i % m != 0) {
-                        if (i % n != 0) {
-                            count++;
-                        }
-                    }
-                }
+            if ((i % k != 0) && (i % l != 0) && (i % m != 0) && (i % n != 0)) {
+                count++;
             }
         }
         cout << d - count;
