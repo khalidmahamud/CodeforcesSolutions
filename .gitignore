@@ -2,3 +2,4 @@
 *.exe
 .vscode/settings.json
 .gitattributes
+README.md
